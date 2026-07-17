@@ -25,7 +25,8 @@ echo   b4. Full Name Concatenation
 echo   b5. Call by Value vs Reference
 echo   b6. Book Structure
 echo.
-set /p exp=Enter program number (1-7 or b1-b6): 
+echo You can type the number (1-7 or b1-b6) OR the program name!
+set /p exp=Enter your choice: 
 
 :: Convert to lowercase for case insensitivity
 set "exp=!exp:l=L!"
@@ -45,20 +46,33 @@ echo.
 echo ==============================
 echo.
 
-:: Map inputs to file names
+:: Map inputs (numbers OR names) to file names
 if /i "%exp%"=="1" set "file=program1_grade_calculator.c"
+if /i "%exp%"=="grade calculator" set "file=program1_grade_calculator.c"
 if /i "%exp%"=="2" set "file=program2_kyc_verification.c"
+if /i "%exp%"=="kyc verification" set "file=program2_kyc_verification.c"
 if /i "%exp%"=="3" set "file=program3_quadratic_roots.c"
+if /i "%exp%"=="quadratic equation roots" set "file=program3_quadratic_roots.c"
 if /i "%exp%"=="4" set "file=program4_sin_approximation.c"
+if /i "%exp%"=="sin(x) approximation" set "file=program4_sin_approximation.c"
 if /i "%exp%"=="5" set "file=program5_keyword_search.c"
+if /i "%exp%"=="keyword search" set "file=program5_keyword_search.c"
 if /i "%exp%"=="6" set "file=program6_student_pass_fail.c"
+if /i "%exp%"=="student pass/fail check" set "file=program6_student_pass_fail.c"
 if /i "%exp%"=="7" set "file=program7_swap_balances.c"
+if /i "%exp%"=="swap balances (pointers)" set "file=program7_swap_balances.c"
 if /i "%exp%"=="b1" set "file=partb1_binary_search_book.c"
+if /i "%exp%"=="binary search (book id)" set "file=partb1_binary_search_book.c"
 if /i "%exp%"=="b2" set "file=partb2_sort_scores_desc.c"
+if /i "%exp%"=="sort scores (descending)" set "file=partb2_sort_scores_desc.c"
 if /i "%exp%"=="b3" set "file=partb3_branch_revenue.c"
+if /i "%exp%"=="branch revenue calculation" set "file=partb3_branch_revenue.c"
 if /i "%exp%"=="b4" set "file=partb4_full_name_concat.c"
+if /i "%exp%"=="full name concatenation" set "file=partb4_full_name_concat.c"
 if /i "%exp%"=="b5" set "file=partb5_call_by_value_ref.c"
+if /i "%exp%"=="call by value vs reference" set "file=partb5_call_by_value_ref.c"
 if /i "%exp%"=="b6" set "file=partb6_book_structure.c"
+if /i "%exp%"=="book structure" set "file=partb6_book_structure.c"
 
 :: Check if file is set
 if not defined file (
