@@ -1,0 +1,9 @@
+
+# Windows temporary files
+Thumbs.db
+*.tmp
+
+# Compiled C files
+*.exe
+*.o
+*.obj
